@@ -1,18 +1,18 @@
 //
-//  TCTableViewControllerChallenge.m
+//  TCTableViewController.m
 //  UITableViewController Challenge Solution
 //
 //  Created by Jamie Berry on 4/26/14.
 //  Copyright (c) 2014 Jamie Berry. All rights reserved.
 //
 
-#import "TCTableViewControllerChallenge.h"
+#import "TCTableViewController.h"
 
-@interface TCTableViewControllerChallenge ()
+@interface TCTableViewController ()
 
 @end
 
-@implementation TCTableViewControllerChallenge
+@implementation TCTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,26 +46,45 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    
+    if (section == 0){
+        return 2;
+    }
+    else if (section == 1){
+        return 1;
+    }
+    else{
+        return 3;
+    }
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    if (indexPath.section == 0){
+        cell.textLabel.text = @"I am in section 0";
+    }
+    else if (indexPath.section ==1){
+        cell.textLabel.text = @"I am in another section";
+        
+    }
+    else{
+        cell.textLabel.text = [NSString stringWithFormat:@"%i", indexPath.row];
+    }
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

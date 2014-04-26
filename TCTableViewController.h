@@ -1,5 +1,5 @@
 //
-//  TCTableViewControllerChallenge.h
+//  TCTableViewController.h
 //  UITableViewController Challenge Solution
 //
 //  Created by Jamie Berry on 4/26/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TCTableViewControllerChallenge : UITableViewController
+@interface TCTableViewController : UITableViewController
 
 @end
